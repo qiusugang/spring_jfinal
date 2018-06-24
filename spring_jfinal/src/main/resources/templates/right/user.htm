@@ -63,13 +63,17 @@
 	
 	
 	<div id="userGridToolBar">
+	<form id="queryForm">
 		<table>
 			<tr>
+				<td><input type="text" name="queryStr" class="easyui-textbox" data-options="prompt:'输入查询条件'"></td>
+				<td><a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-search" onclick="doSearch()">查询</a></td>
 				<td><a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-add" onclick="add()">添加</a></td>
 				<td><a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-edit" onclick="update()">修改</a></td>
 				<td><a href="#" class="easyui-linkbutton" plain="true" iconCls="icon-cancel" onclick="del()">删除</a></td>
 			</tr>
 		</table>
+	</form>
 	</div>
 	<!--复选框-->
 	<div id="roleWin" class="easyui-window" title="用户角色管理"  style="padding:5px;width:300px;height:400px;text-align: center;"  data-options="footer:'#ft3'">

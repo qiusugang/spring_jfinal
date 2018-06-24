@@ -5,7 +5,7 @@ $(function(){
 })
 
 $('#userGrid').datagrid({
-    url: '/user/page',
+    url: '/user/esPage',
     pagePosition:'bottom',
     pagination: true,
     singleSelect: true,
@@ -17,9 +17,9 @@ $('#userGrid').datagrid({
     rownumbers:true,
     nowrap: true,
     columns:[[
-        {field:'username',title:'用户名',width:100,sortable:true},
-        {field:'realname',title:'真实姓名',width:100,sortable:true},
-        {field:'phone',title:'联系电话',width:100,sortable:true},
+        {field:'username',title:'用户名',width:100},
+        {field:'realname',title:'真实姓名',width:100},
+        {field:'phone',title:'联系电话',width:100},
         {field:'id',title:'其它操作',width:80,align:'center',
             formatter:function(value,row,index){
             	var roleManage = '<a href="javascript:void(0)" onclick="showMenu(\''+row.id+'\')">角色管理</a> ';
@@ -170,3 +170,9 @@ $("#saveMenuSbmt").click(function(){
 	pop('温馨提示', '保存成功');
 	$("#roleWin").window("close");
 });
+
+function doSearch() {
+	var param = {};
+	generateCondition(param, $('#queryForm').serialize());
+	$("#userGrid").datagrid('load', param);
+}

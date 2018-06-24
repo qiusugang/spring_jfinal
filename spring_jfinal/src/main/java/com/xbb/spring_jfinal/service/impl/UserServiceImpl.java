@@ -3,13 +3,12 @@ package com.xbb.spring_jfinal.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
 import com.jfinal.plugin.activerecord.Page;
 import com.xbb.spring_jfinal.kit.SqlKit;
 import com.xbb.spring_jfinal.kit.SqlKit.PageInfo;
@@ -23,6 +22,8 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
 
 	@Autowired
 	RoleService roleService;
+	@Autowired
+	ElasticsearchTemplate elasticsearchTemplate;
 	
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
