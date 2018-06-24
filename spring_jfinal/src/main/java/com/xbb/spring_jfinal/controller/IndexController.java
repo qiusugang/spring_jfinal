@@ -45,7 +45,7 @@ public class IndexController extends BaseController{
 		templateservice.MyGenerator generator = new templateservice.MyGenerator(DbKit.getConfig().getDataSource(), "com.xbb.spring_jfinal.model.base",
 				srcPath + "com/xbb/spring_jfinal/model/base", "com.xbb.spring_jfinal.model", srcPath + "com/xbb/spring_jfinal/model",
 				"com.xbb.spring_jfinal.service", srcPath + "com/xbb/spring_jfinal/service", "com.xbb.spring_jfinal.kit",
-				srcPath + "com/xbb/spring_jfinal/kit");
+				srcPath + "com/xbb/spring_jfinal/kit", "com.xbb.spring_jfinal.controller", srcPath + "com/xbb/spring_jfinal/controller");
 		generator.setGenerateDaoInModel(true);
 		generator.setGenerateChainSetter(true);
 		generator.setGenerateDataDictionary(true);

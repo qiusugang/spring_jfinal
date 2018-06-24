@@ -13,6 +13,7 @@ public class MyGenerator extends Generator {
 	
 	ServiceGenerator serviceGenerator;
 	KitGenerator kitGenerator;
+	ControllerGenerator controllerGenerator;
 	/**
 	 * 构造 Generator，生成 BaseModel、Model、MappingKit 三类文件，其中 MappingKit 输出目录与包名与 Model相同
 	 * @param dataSource 数据源
@@ -26,6 +27,16 @@ public class MyGenerator extends Generator {
 		super(dataSource, baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
 		serviceGenerator = new ServiceGenerator(kitPackageName, modelPackageName, servicePackageName, serviceOutputDir);
 		kitGenerator = new KitGenerator(kitPackageName, kitOutPutdir);
+		
+	}
+	
+	public MyGenerator(DataSource dataSource, String baseModelPackageName, String baseModelOutputDir, String modelPackageName, String modelOutputDir, String servicePackageName, String serviceOutputDir, String kitPackageName,
+			String kitOutPutdir, String controllerPackageName,
+			String controllerOutPutDir) {
+				super(dataSource, baseModelPackageName, baseModelOutputDir, modelPackageName, modelOutputDir);
+				serviceGenerator = new ServiceGenerator(kitPackageName, modelPackageName, servicePackageName, serviceOutputDir);
+				kitGenerator = new KitGenerator(kitPackageName, kitOutPutdir);
+				controllerGenerator = new ControllerGenerator(kitPackageName, modelPackageName, servicePackageName, controllerPackageName, controllerOutPutDir);
 	}
 	
 /*	*//**
