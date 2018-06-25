@@ -40,7 +40,7 @@ public class IndexController extends BaseController{
 	@ResponseBody
 	public String generate1() {
 
-		String srcPath = "/Users/xubinbin/Documents/workspace/spring_jfinal/src/main/java/";
+		String srcPath = "/Users/xubinbin/git/spring_jfinal/spring_jfinal/src/main/java/";
 
 		templateservice.MyGenerator generator = new templateservice.MyGenerator(DbKit.getConfig().getDataSource(), "com.xbb.spring_jfinal.model.base",
 				srcPath + "com/xbb/spring_jfinal/model/base", "com.xbb.spring_jfinal.model", srcPath + "com/xbb/spring_jfinal/model",

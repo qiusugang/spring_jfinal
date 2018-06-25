@@ -114,6 +114,9 @@ public class MyGenerator extends Generator {
 		if (null != kitGenerator){
 			kitGenerator.generate();
 		}
+		if (null != controllerGenerator) {
+			controllerGenerator.generate(tableMetas);
+		}
 		long usedTime = (System.currentTimeMillis() - start) / 1000;
 		System.out.println("Generate complete in " + usedTime + " seconds.");
 	}
